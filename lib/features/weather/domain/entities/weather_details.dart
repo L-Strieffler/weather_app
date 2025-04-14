@@ -1,29 +1,15 @@
 import 'package:equatable/equatable.dart';
+import 'package:weather_app/features/weather/domain/entities/daily_weather_details.dart';
 
 class WeatherDetails extends Equatable {
   final String locationName;
-  final DateTime date;
-  final double temperature;
-  final int humidity;
-  final double pressure;
-  final double windSpeed;
+  final List<DailyWeatherDetails> dailyWeatherDetails;
 
   const WeatherDetails({
     required this.locationName,
-    required this.date,
-    required this.temperature,
-    required this.humidity,
-    required this.pressure,
-    required this.windSpeed,
+    required this.dailyWeatherDetails,
   });
 
   @override
-  List<Object?> get props => [
-    locationName,
-    date,
-    temperature,
-    humidity,
-    pressure,
-    windSpeed,
-  ];
+  List<Object?> get props => [locationName, dailyWeatherDetails];
 }

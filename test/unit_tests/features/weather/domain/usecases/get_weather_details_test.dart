@@ -20,23 +20,22 @@ void main() {
   });
 
   final tWeatherDetails = WeatherDetails(
-    locationName: 'Cairo',
-    date: DateTime(2020, 1, 1, 10, 0),
-    pressure: 1013.0,
-    temperature: 30.0,
-    humidity: 50,
-    windSpeed: 10.0,
+    locationName: 'New York, United States',
+    dailyWeatherDetails: [],
   );
 
   test('should get weather details from the repository', () async {
     // arrange
-    when(mockRepository.getWeatherDetails(any))
-        .thenAnswer((_) async => Right(tWeatherDetails));
+    when(
+      mockRepository.getWeatherDetails(any),
+    ).thenAnswer((_) async => Right(tWeatherDetails));
     // act
-    final result = await usecase('Cairo');
+    final result = await usecase(
+      Params(locationName: 'New York, United States'),
+    );
     // assert
     expect(result, Right(tWeatherDetails));
-    verify(mockRepository.getWeatherDetails('Cairo'));
+    verify(mockRepository.getWeatherDetails('New York, United States'));
     verifyNoMoreInteractions(mockRepository);
   });
 }

@@ -7,7 +7,7 @@ import 'dart:async' as _i4;
 
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:weather_app/core/error/failures.dart' as _i5;
+import 'package:weather_app/core/error/failure.dart' as _i5;
 import 'package:weather_app/features/weather/domain/entities/weather_details.dart'
     as _i6;
 import 'package:weather_app/features/weather/domain/repositories/repository.dart'
