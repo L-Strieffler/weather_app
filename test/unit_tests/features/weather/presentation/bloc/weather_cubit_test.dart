@@ -78,12 +78,21 @@ void main() {
     blocTest(
       'emits [loading, loaded] with updated dailyWeatherDetails',
       build: () => WeatherCubit(mockGetWeatherDetails),
+      seed:
+          () => WeatherState(
+            status: WeatherStatus.loaded,
+            weatherDetails: tWeatherDetails,
+          ),
       act: (bloc) => bloc.updateDailyWeatherDetails(6),
       expect:
           () => const <WeatherState>[
-            WeatherState(status: WeatherStatus.loading),
+            WeatherState(
+              status: WeatherStatus.loading,
+              weatherDetails: tWeatherDetails,
+            ),
             WeatherState(
               status: WeatherStatus.loaded,
+              weatherDetails: tWeatherDetails,
               dailyWeatherDetails: tDailyWeatherDetails,
             ),
           ],
