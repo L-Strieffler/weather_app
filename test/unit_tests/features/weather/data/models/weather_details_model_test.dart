@@ -8,7 +8,7 @@ import '../../../../../fixtures/fixture_reader.dart';
 import '../../../../../fixtures/test_entities.dart';
 
 void main() {
-  final tWeatherDetailsModel = testWeatherDetailsModel();
+  final tWeatherDetailsModel = TestEntities.testWeatherDetailsModel;
 
   test('should be a subclass of WeatherDetails entity', () async {
     // assert
