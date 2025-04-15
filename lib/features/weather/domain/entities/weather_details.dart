@@ -10,6 +10,10 @@ class WeatherDetails extends Equatable {
     required this.dailyWeatherDetails,
   });
 
+  const WeatherDetails.empty()
+      : locationName = '',
+        dailyWeatherDetails = const [];
+
   @override
   List<Object?> get props => [locationName, dailyWeatherDetails];
 }
