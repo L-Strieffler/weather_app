@@ -5,18 +5,10 @@ import 'package:weather_app/features/weather/data/models/daily_weather_details_m
 import 'package:weather_app/features/weather/domain/entities/daily_weather_details.dart';
 
 import '../../../../../fixtures/fixture_reader.dart';
+import '../../../../../fixtures/test_entities.dart';
 
 void main() {
-  final tWeatherDetailsModel = DailyWeatherDetailsModel(
-    day: 'Friday',
-    temperature: -6.7,
-    humidity: 66,
-    pressure: 1018,
-    windSpeed: 3.5,
-    minTemperature: -9.8,
-    maxTemperature: -4.3,
-  );
-
+  final tWeatherDetailsModel = testDailyWeatherDetailsModel();
   test('should be a subclass of WeatherDetails entity', () async {
     // assert
     expect(tWeatherDetailsModel, isA<DailyWeatherDetails>());
