@@ -2,7 +2,7 @@ import 'package:weather_app/features/weather/data/models/daily_weather_details_m
 import 'package:weather_app/features/weather/domain/entities/weather_details.dart';
 
 class WeatherDetailsModel extends WeatherDetails {
-  WeatherDetailsModel({
+  const WeatherDetailsModel({
     required super.locationName,
     required super.dailyWeatherDetails,
   });
