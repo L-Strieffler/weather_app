@@ -1,8 +1,9 @@
+import 'package:intl/intl.dart';
 import 'package:weather_app/features/weather/domain/entities/daily_weather_details.dart';
 
 class DailyWeatherDetailsModel extends DailyWeatherDetails {
   const DailyWeatherDetailsModel({
-    required super.date,
+    required super.day,
     required super.temperature,
     required super.humidity,
     required super.pressure,
@@ -13,7 +14,7 @@ class DailyWeatherDetailsModel extends DailyWeatherDetails {
 
   factory DailyWeatherDetailsModel.fromJson(Map<String, dynamic> json) {
     return DailyWeatherDetailsModel(
-      date: DateTime.parse(json['time'] as String),
+      day: DateFormat('EEEE').format(DateTime.parse(json['time'] as String)),
       temperature: (json['values']['temperatureAvg'] as num).toDouble(),
       humidity: json['values']['humidityAvg'] as int,
       pressure: (json['values']['pressureSurfaceLevelAvg'] as int),

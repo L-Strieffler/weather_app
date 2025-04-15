@@ -12,7 +12,7 @@ void main() {
     locationName: 'New York, United States',
     dailyWeatherDetails: [
       DailyWeatherDetailsModel(
-        date: DateTime.parse('2025-02-08 11:00:00.000Z'),
+        day: 'Saturday',
         temperature: -3.2,
         humidity: 77,
         pressure: 1004,
@@ -21,7 +21,7 @@ void main() {
         maxTemperature: -1.7,
       ),
       DailyWeatherDetailsModel(
-        date: DateTime.parse('2025-02-09 11:00:00.000Z'),
+        day: 'Sunday',
         temperature: -1.5,
         humidity: 72,
         pressure: 1005,
@@ -30,7 +30,7 @@ void main() {
         maxTemperature: 0.4,
       ),
       DailyWeatherDetailsModel(
-        date: DateTime.parse('2025-02-10 11:00:00.000Z'),
+        day: 'Monday',
         temperature: -4.1,
         humidity: 69,
         pressure: 1013,
@@ -39,7 +39,7 @@ void main() {
         maxTemperature: -2.0,
       ),
       DailyWeatherDetailsModel(
-        date: DateTime.parse('2025-02-11 11:00:00.000Z'),
+        day: 'Tuesday',
         temperature: -2.5,
         humidity: 67,
         pressure: 1010,
@@ -48,7 +48,7 @@ void main() {
         maxTemperature: 0.4,
       ),
       DailyWeatherDetailsModel(
-        date: DateTime.parse('2025-02-12 11:00:00.000Z'),
+        day: 'Wednesday',
         temperature: -2.5,
         humidity: 66,
         pressure: 1006,
@@ -57,7 +57,7 @@ void main() {
         maxTemperature: -0.1,
       ),
       DailyWeatherDetailsModel(
-        date: DateTime.parse('2025-02-13 11:00:00.000Z'),
+        day: 'Thursday',
         temperature: -0.8,
         humidity: 67,
         pressure: 1002,
@@ -66,7 +66,7 @@ void main() {
         maxTemperature: 4.6,
       ),
       DailyWeatherDetailsModel(
-        date: DateTime.parse('2025-02-14 11:00:00.000Z'),
+        day: 'Friday',
         temperature: -6.7,
         humidity: 66,
         pressure: 1018,

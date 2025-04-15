@@ -8,7 +8,7 @@ import '../../../../../fixtures/fixture_reader.dart';
 
 void main() {
   final tWeatherDetailsModel = DailyWeatherDetailsModel(
-    date: DateTime.utc(2025, 2, 14, 11, 0),
+    day: 'Friday',
     temperature: -6.7,
     humidity: 66,
     pressure: 1018,
