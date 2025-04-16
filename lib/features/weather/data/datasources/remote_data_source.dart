@@ -15,9 +15,11 @@ class RemoteDataSourceImpl implements RemoteDataSource {
 
   @override
   Future<WeatherDetailsModel> getWeatherDetails(String locationName) async {
+    const String apiKey = String.fromEnvironment('WEATHER_KEY');
     var url = Uri.https('api.tomorrow.io', '/v4/weather/forecast', {
       'location': locationName,
       'units': 'metric',
+      'apikey': apiKey,
     });
     final response = await httpClient.get(url);
     if (response.statusCode != 200) {
