@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:http/http.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:weather_app/core/error/exception.dart';
@@ -38,6 +39,9 @@ void main() {
     test('should check if the device is online', () async {
       // arrange
       when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
+      when(
+        mockRemoteDataSource.getWeatherDetails(any),
+      ).thenAnswer((_) async => Future.value(tWeatherDetailsModel));
       // act
       repository.getWeatherDetails(tLocationName);
       // assert
@@ -77,6 +81,21 @@ void main() {
           // assert
           verify(mockRemoteDataSource.getWeatherDetails(tLocationName));
           expect(result, Left(ServerFailure()));
+        },
+      );
+
+      test(
+        'should return client failure when client.get call is unsuccessful',
+        () async {
+          // arrange
+          when(
+            mockRemoteDataSource.getWeatherDetails(any),
+          ).thenThrow(ClientException('Client error'));
+          // act
+          final result = await repository.getWeatherDetails(tLocationName);
+          // assert
+          verify(mockRemoteDataSource.getWeatherDetails(tLocationName));
+          expect(result, Left(ClientFailure()));
         },
       );
     });

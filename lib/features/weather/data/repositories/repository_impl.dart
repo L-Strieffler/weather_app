@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:http/http.dart';
 import 'package:weather_app/core/error/exception.dart';
 import 'package:weather_app/core/error/failure.dart';
 import 'package:weather_app/core/platform/network_info.dart';
@@ -23,6 +24,8 @@ class RepositoryImpl implements Repository {
         return Right(weatherDetails);
       } on ServerException {
         return Left(ServerFailure());
+      } on ClientException {
+        return Left(ClientFailure());
       }
     } else {
       return Left(ConnectionFailure());
