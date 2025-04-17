@@ -6,26 +6,26 @@ class WeatherState extends Equatable {
   final WeatherStatus status;
   final String errorMessage;
   final WeatherDetails weatherDetails;
-  final DailyWeatherDetails dailyWeatherDetails;
+  final int index;
 
   const WeatherState({
     this.status = WeatherStatus.initial,
     this.errorMessage = '',
     this.weatherDetails = const WeatherDetails.empty(),
-    this.dailyWeatherDetails = const DailyWeatherDetails.empty(),
+    this.index = 0,
   });
 
   WeatherState copyWith({
     WeatherStatus? status,
     String? errorMessage,
     WeatherDetails? weatherDetails,
-    DailyWeatherDetails? dailyWeatherDetails,
+    int? index,
   }) {
     return WeatherState(
       status: status ?? this.status,
       errorMessage: errorMessage ?? this.errorMessage,
       weatherDetails: weatherDetails ?? this.weatherDetails,
-      dailyWeatherDetails: dailyWeatherDetails ?? this.dailyWeatherDetails,
+      index: index ?? this.index,
     );
   }
 
@@ -34,6 +34,6 @@ class WeatherState extends Equatable {
     status,
     errorMessage,
     weatherDetails,
-    dailyWeatherDetails,
+    index,
   ];
 }

@@ -1,6 +1,5 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:weather_app/features/weather/domain/entities/daily_weather_details.dart';
 import 'package:weather_app/features/weather/domain/entities/weather_details.dart';
 import 'package:weather_app/features/weather/domain/usecases/get_weather_details.dart'
     as get_weather_details;
@@ -13,7 +12,9 @@ class WeatherCubit extends Cubit<WeatherState> {
   WeatherCubit(this.getWeatherDetails)
     : super(WeatherState(status: WeatherStatus.initial));
 
-  void updateWeatherDetails(String locationName) async {
+  Future<void> updateWeatherDetails({
+    String locationName = 'munich, bavaria, germany',
+  }) async {
     emit(state.copyWith(status: WeatherStatus.loading));
 
     final result = await getWeatherDetails.call(
@@ -30,6 +31,7 @@ class WeatherCubit extends Cubit<WeatherState> {
           state.copyWith(
             status: WeatherStatus.loaded,
             weatherDetails: weatherDetails,
+            index: 0,
           ),
         );
       },
@@ -38,11 +40,6 @@ class WeatherCubit extends Cubit<WeatherState> {
 
   void updateDailyWeatherDetails(int index) {
     emit(state.copyWith(status: WeatherStatus.loading));
-    emit(
-      state.copyWith(
-        status: WeatherStatus.loaded,
-        dailyWeatherDetails: state.weatherDetails.dailyWeatherDetails[index],
-      ),
-    );
+    emit(state.copyWith(status: WeatherStatus.loaded, index: index));
   }
 }
