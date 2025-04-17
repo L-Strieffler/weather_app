@@ -3,7 +3,7 @@ import 'package:weather_app/features/weather/domain/entities/daily_weather_detai
 
 class DailyWeatherDetailsModel extends DailyWeatherDetails {
   const DailyWeatherDetailsModel({
-    required super.day,
+    required super.date,
     required super.temperature,
     required super.humidity,
     required super.pressure,
@@ -14,10 +14,10 @@ class DailyWeatherDetailsModel extends DailyWeatherDetails {
 
   factory DailyWeatherDetailsModel.fromJson(Map<String, dynamic> json) {
     return DailyWeatherDetailsModel(
-      day: DateFormat('EEEE').format(DateTime.parse(json['time'] as String)),
+      date: DateFormat('yMMMMEEEEd').format(DateTime.parse(json['time'] as String)),
       temperature: (json['values']['temperatureAvg'] as num).toDouble(),
       humidity: json['values']['humidityAvg'] as int,
-      pressure: (json['values']['pressureSurfaceLevelAvg'] as int),
+      pressure: (json['values']['pressureSurfaceLevelAvg'] as num).toInt(),
       windSpeed: (json['values']['windSpeedAvg'] as num).toDouble(),
       minTemperature: (json['values']['temperatureMin'] as num).toDouble(),
       maxTemperature: (json['values']['temperatureMax'] as num).toDouble(),

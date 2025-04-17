@@ -8,10 +8,10 @@ import '../../../../../fixtures/fixture_reader.dart';
 import '../../../../../fixtures/test_entities.dart';
 
 void main() {
-  final tWeatherDetailsModel = TestEntities.testWeatherDetailsModel;
+  final tDailyWeatherDetailsModel = TestEntities.testDailyWeatherDetailsModel;
   test('should be a subclass of WeatherDetails entity', () async {
     // assert
-    expect(tWeatherDetailsModel, isA<DailyWeatherDetails>());
+    expect(tDailyWeatherDetailsModel, isA<DailyWeatherDetails>());
   });
 
   group('should return a valid model', () {
@@ -23,7 +23,7 @@ void main() {
       // act
       final result = DailyWeatherDetailsModel.fromJson(jsonMap);
       // assert
-      expect(result, tWeatherDetailsModel);
+      expect(result, tDailyWeatherDetailsModel);
     });
   });
 }

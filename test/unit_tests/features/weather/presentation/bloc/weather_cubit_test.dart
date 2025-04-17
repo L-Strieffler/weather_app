@@ -4,7 +4,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:weather_app/core/error/failure.dart';
-import 'package:weather_app/features/weather/domain/entities/daily_weather_details.dart';
 import 'package:weather_app/features/weather/domain/entities/weather_details.dart';
 import 'package:weather_app/features/weather/domain/usecases/get_weather_details.dart';
 import 'package:weather_app/features/weather/presentation/bloc/cubit/weather_cubit.dart';
@@ -23,8 +22,6 @@ void main() {
   });
 
   const WeatherDetails tWeatherDetails = TestEntities.testWeatherDetailsModel;
-  const DailyWeatherDetails tDailyWeatherDetails =
-      TestEntities.testDailyWeatherDetailsModel;
 
   test('initialState should be Empty', () {
     // assert
@@ -34,7 +31,7 @@ void main() {
         status: WeatherStatus.initial,
         errorMessage: '',
         weatherDetails: WeatherDetails.empty(),
-        dailyWeatherDetails: DailyWeatherDetails.empty(),
+        index: 0,
       ),
     );
   });
@@ -47,7 +44,7 @@ void main() {
             mockGetWeatherDetails.call(any),
           ).thenAnswer((_) async => Right(tWeatherDetails)),
       build: () => WeatherCubit(mockGetWeatherDetails),
-      act: (bloc) => bloc.updateWeatherDetails('New York, United States'),
+      act: (bloc) => bloc.updateWeatherDetails(locationName: 'New York, United States'),
       expect:
           () => const <WeatherState>[
             WeatherState(status: WeatherStatus.loading),
@@ -65,7 +62,7 @@ void main() {
             mockGetWeatherDetails.call(any),
           ).thenAnswer((_) async => Left(ServerFailure())),
       build: () => WeatherCubit(mockGetWeatherDetails),
-      act: (bloc) => bloc.updateWeatherDetails('New York, United States'),
+      act: (bloc) => bloc.updateWeatherDetails(locationName: 'New York, United States'),
       expect:
           () => const <WeatherState>[
             WeatherState(status: WeatherStatus.loading),
@@ -93,7 +90,7 @@ void main() {
             WeatherState(
               status: WeatherStatus.loaded,
               weatherDetails: tWeatherDetails,
-              dailyWeatherDetails: tDailyWeatherDetails,
+              index: 6,
             ),
           ],
     );

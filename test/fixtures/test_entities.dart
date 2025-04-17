@@ -6,7 +6,7 @@ class TestEntities {
     locationName: 'New York, United States',
     dailyWeatherDetails: [
       DailyWeatherDetailsModel(
-        day: 'Saturday',
+        date: 'Saturday, February 8, 2025',
         temperature: -3.2,
         humidity: 77,
         pressure: 1004,
@@ -15,7 +15,7 @@ class TestEntities {
         maxTemperature: -1.7,
       ),
       DailyWeatherDetailsModel(
-        day: 'Sunday',
+        date: 'Sunday, February 9, 2025',
         temperature: -1.5,
         humidity: 72,
         pressure: 1005,
@@ -24,7 +24,7 @@ class TestEntities {
         maxTemperature: 0.4,
       ),
       DailyWeatherDetailsModel(
-        day: 'Monday',
+        date: 'Monday, February 10, 2025',
         temperature: -4.1,
         humidity: 69,
         pressure: 1013,
@@ -33,7 +33,7 @@ class TestEntities {
         maxTemperature: -2.0,
       ),
       DailyWeatherDetailsModel(
-        day: 'Tuesday',
+        date: 'Tuesday, February 11, 2025',
         temperature: -2.5,
         humidity: 67,
         pressure: 1010,
@@ -42,7 +42,7 @@ class TestEntities {
         maxTemperature: 0.4,
       ),
       DailyWeatherDetailsModel(
-        day: 'Wednesday',
+        date: 'Wednesday, February 12, 2025',
         temperature: -2.5,
         humidity: 66,
         pressure: 1006,
@@ -51,7 +51,7 @@ class TestEntities {
         maxTemperature: -0.1,
       ),
       DailyWeatherDetailsModel(
-        day: 'Thursday',
+        date: 'Thursday, February 13, 2025',
         temperature: -0.8,
         humidity: 67,
         pressure: 1002,
@@ -60,7 +60,7 @@ class TestEntities {
         maxTemperature: 4.6,
       ),
       DailyWeatherDetailsModel(
-        day: 'Friday',
+        date: 'Friday, February 14, 2025',
         temperature: -6.7,
         humidity: 66,
         pressure: 1018,
@@ -72,7 +72,7 @@ class TestEntities {
   );
 
   static const testDailyWeatherDetailsModel = DailyWeatherDetailsModel(
-    day: 'Friday',
+    date: 'Friday, February 14, 2025',
     temperature: -6.7,
     humidity: 66,
     pressure: 1018,

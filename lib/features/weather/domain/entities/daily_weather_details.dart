@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class DailyWeatherDetails extends Equatable {
-  final String day;
+  final String date;
   final double temperature;
   final int humidity;
   final int pressure;
@@ -10,7 +10,7 @@ class DailyWeatherDetails extends Equatable {
   final double maxTemperature;
 
   const DailyWeatherDetails({
-    required this.day,
+    required this.date,
     required this.temperature,
     required this.humidity,
     required this.pressure,
@@ -20,7 +20,7 @@ class DailyWeatherDetails extends Equatable {
   });
 
   const DailyWeatherDetails.empty()
-      : day = '',
+      : date = '',
         temperature = 0.0,
         humidity = 0,
         pressure = 0,
@@ -30,7 +30,7 @@ class DailyWeatherDetails extends Equatable {
 
   @override
   List<Object?> get props => [
-    day,
+    date,
     temperature,
     humidity,
     pressure,
