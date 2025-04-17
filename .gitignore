@@ -47,3 +47,4 @@ app.*.map.json
 # Ignore all .mocks.dart files
 *.mocks.dart
 api-keys.json
+coverage/lcov.info
