@@ -24,6 +24,7 @@ void main() {
     var tUrl = Uri.https('api.tomorrow.io', '/v4/weather/forecast', {
       'location': tLocationName,
       'units': 'metric',
+      'apikey': '',
     });
 
     test('should perform a GET request on a URL with location name', () async {
