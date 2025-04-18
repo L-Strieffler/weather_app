@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/features/weather/domain/entities/daily_weather_details.dart';
+import 'package:weather_app/features/weather/presentation/constants.dart';
 
 class WeatherDisplayWidget extends StatelessWidget {
   final DailyWeatherDetails dailyWeatherDetails;
@@ -22,7 +23,7 @@ class WeatherDisplayWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(ScalingParameter.padding),
           child: Align(
             alignment: Alignment.topLeft,
             child: Column(
@@ -32,17 +33,22 @@ class WeatherDisplayWidget extends StatelessWidget {
                 Text(
                   day,
                   style: const TextStyle(
-                    fontSize: 24,
+                    fontSize: ScalingParameter.fontSizeLarge,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Text(dateDetails, style: const TextStyle(fontSize: 18)),
+                Text(
+                  dateDetails,
+                  style: const TextStyle(
+                    fontSize: ScalingParameter.fontSizeMedium,
+                  ),
+                ),
               ],
             ),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(ScalingParameter.padding),
           child: Align(
             alignment: Alignment.topLeft,
             child: ElevatedButton.icon(
@@ -53,10 +59,13 @@ class WeatherDisplayWidget extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.all(16),
+          padding: EdgeInsets.all(ScalingParameter.padding),
           child: Text(
             '${dailyWeatherDetails.temperature.toInt().toString()}°',
-            style: const TextStyle(fontSize: 92, fontWeight: FontWeight.normal),
+            style: const TextStyle(
+              fontSize: ScalingParameter.fontSizeExtraLarge,
+              fontWeight: FontWeight.normal,
+            ),
           ),
         ),
       ],

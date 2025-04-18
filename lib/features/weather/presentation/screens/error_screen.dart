@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/features/weather/presentation/constants.dart';
 
 class ErrorScreen extends StatelessWidget {
   final void Function() onRetry;
@@ -12,7 +13,7 @@ class ErrorScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(ScalingParameter.padding),
             child: Text(
               'Retrieving weather data failed',
               style: const TextStyle(color: Colors.red),

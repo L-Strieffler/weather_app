@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/features/weather/domain/entities/daily_weather_details.dart';
+import 'package:weather_app/features/weather/presentation/constants.dart';
 
 class WeatherListItem extends StatelessWidget {
   final DailyWeatherDetails weatherDetails;
@@ -31,7 +32,7 @@ class WeatherListItem extends StatelessWidget {
                       isSelected
                           ? Theme.of(context).colorScheme.onPrimaryContainer
                           : Theme.of(context).colorScheme.onSecondaryContainer,
-                  fontSize: 20,
+                  fontSize: ScalingParameter.fontSizeLarge,
                   fontWeight: FontWeight.bold,
                 ),
                 overflow: TextOverflow.clip,
@@ -44,7 +45,7 @@ class WeatherListItem extends StatelessWidget {
                       isSelected
                           ? Theme.of(context).colorScheme.onPrimaryContainer
                           : Theme.of(context).colorScheme.onSecondaryContainer,
-                  fontSize: 20,
+                  fontSize: ScalingParameter.fontSizeLarge,
                 ),
                 overflow: TextOverflow.clip,
                 softWrap: false,

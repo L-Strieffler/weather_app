@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/features/weather/domain/entities/weather_details.dart';
+import 'package:weather_app/features/weather/presentation/constants.dart';
 import 'package:weather_app/features/weather/presentation/widgets/weather_list_item_widget.dart';
 
 class WeatherListWidget extends StatelessWidget {
@@ -17,11 +18,11 @@ class WeatherListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 20.0),
-      height: 100.0,
+      margin: EdgeInsets.symmetric(vertical: ScalingParameter.paddingLarge),
+      height: ScalingParameter.weatherListItemHeight,
       child: CarouselView(
         onTap: (value) => onItemTap(value),
-        itemExtent: 150.0,
+        itemExtent: ScalingParameter.weatherListItemWidth,
         children: [
           for (int i = 0; i < weatherDetails.dailyWeatherDetails.length; i++)
             WeatherListItem(
