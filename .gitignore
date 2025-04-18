@@ -48,3 +48,4 @@ app.*.map.json
 *.mocks.dart
 api-keys.json
 coverage/lcov.info
+.vscode/launch.json
