@@ -1,7 +1,8 @@
+import 'package:const_date_time/const_date_time.dart';
 import 'package:equatable/equatable.dart';
 
 class DailyWeatherDetails extends Equatable {
-  final String date;
+  final DateTime date;
   final double temperature;
   final int humidity;
   final int pressure;
@@ -20,7 +21,7 @@ class DailyWeatherDetails extends Equatable {
   });
 
   const DailyWeatherDetails.empty()
-      : date = '',
+      : date = const ConstDateTime(1970, 1, 1),
         temperature = 0.0,
         humidity = 0,
         pressure = 0,

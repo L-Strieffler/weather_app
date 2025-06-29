@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:weather_app/features/weather/domain/entities/daily_weather_details.dart';
 import 'package:weather_app/features/weather/presentation/constants.dart';
 
@@ -14,11 +15,7 @@ class WeatherDisplayWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String date = dailyWeatherDetails.date;
-    final List<String> parts = date.split(',');
-    final String day = parts[0];
-    final String dateDetails =
-        parts.length > 1 ? parts.sublist(1).join(',') : '';
+    final DateTime date = dailyWeatherDetails.date;
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -31,14 +28,14 @@ class WeatherDisplayWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  day,
+                  DateFormat('EEEE').format(date),
                   style: const TextStyle(
                     fontSize: ScalingParameter.fontSizeLarge,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
-                  dateDetails,
+                  DateFormat('Md').format(date),
                   style: const TextStyle(
                     fontSize: ScalingParameter.fontSizeMedium,
                   ),

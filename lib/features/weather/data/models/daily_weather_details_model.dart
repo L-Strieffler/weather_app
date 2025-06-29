@@ -14,7 +14,7 @@ class DailyWeatherDetailsModel extends DailyWeatherDetails {
 
   factory DailyWeatherDetailsModel.fromJson(Map<String, dynamic> json) {
     return DailyWeatherDetailsModel(
-      date: DateFormat('yMMMMEEEEd').format(DateTime.parse(json['time'] as String)),
+      date: DateTime.parse(json['time'] as String).toLocal(),
       temperature: (json['values']['temperatureAvg'] as num).toDouble(),
       humidity: json['values']['humidityAvg'] as int,
       pressure: (json['values']['pressureSurfaceLevelAvg'] as num).toInt(),
@@ -23,4 +23,5 @@ class DailyWeatherDetailsModel extends DailyWeatherDetails {
       maxTemperature: (json['values']['temperatureMax'] as num).toDouble(),
     );
   }
+  
 }

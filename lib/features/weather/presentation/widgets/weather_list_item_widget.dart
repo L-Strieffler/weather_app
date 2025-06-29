@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:weather_app/features/weather/domain/entities/daily_weather_details.dart';
 import 'package:weather_app/features/weather/presentation/constants.dart';
 
@@ -26,7 +27,7 @@ class WeatherListItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                weatherDetails.date.substring(0, 3),
+                DateFormat('EEEE').format(weatherDetails.date).substring(0, 3),
                 style: TextStyle(
                   color:
                       isSelected
