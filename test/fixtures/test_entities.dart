@@ -1,3 +1,4 @@
+import 'package:const_date_time/const_date_time.dart';
 import 'package:weather_app/features/weather/data/models/daily_weather_details_model.dart';
 import 'package:weather_app/features/weather/data/models/weather_details_model.dart';
 
@@ -6,7 +7,7 @@ class TestEntities {
     locationName: 'New York, United States',
     dailyWeatherDetails: [
       DailyWeatherDetailsModel(
-        date: 'Saturday, February 8, 2025',
+        date: ConstDateTime(2025, 2, 8, 12, 0, 0),
         temperature: -3.2,
         humidity: 77,
         pressure: 1004,
@@ -15,7 +16,7 @@ class TestEntities {
         maxTemperature: -1.7,
       ),
       DailyWeatherDetailsModel(
-        date: 'Sunday, February 9, 2025',
+        date: ConstDateTime(2025, 2, 9, 12, 0, 0),
         temperature: -1.5,
         humidity: 72,
         pressure: 1005,
@@ -24,7 +25,7 @@ class TestEntities {
         maxTemperature: 0.4,
       ),
       DailyWeatherDetailsModel(
-        date: 'Monday, February 10, 2025',
+        date: ConstDateTime(2025, 2, 10, 12, 0, 0),
         temperature: -4.1,
         humidity: 69,
         pressure: 1013,
@@ -33,7 +34,7 @@ class TestEntities {
         maxTemperature: -2.0,
       ),
       DailyWeatherDetailsModel(
-        date: 'Tuesday, February 11, 2025',
+        date: ConstDateTime(2025, 2, 11, 12, 0, 0),
         temperature: -2.5,
         humidity: 67,
         pressure: 1010,
@@ -42,7 +43,7 @@ class TestEntities {
         maxTemperature: 0.4,
       ),
       DailyWeatherDetailsModel(
-        date: 'Wednesday, February 12, 2025',
+        date: ConstDateTime(2025, 2, 12, 12, 0, 0),
         temperature: -2.5,
         humidity: 66,
         pressure: 1006,
@@ -51,7 +52,7 @@ class TestEntities {
         maxTemperature: -0.1,
       ),
       DailyWeatherDetailsModel(
-        date: 'Thursday, February 13, 2025',
+        date: ConstDateTime(2025, 2, 13, 12, 0, 0),
         temperature: -0.8,
         humidity: 67,
         pressure: 1002,
@@ -60,7 +61,7 @@ class TestEntities {
         maxTemperature: 4.6,
       ),
       DailyWeatherDetailsModel(
-        date: 'Friday, February 14, 2025',
+        date: ConstDateTime(2025, 2, 14, 12, 0, 0),
         temperature: -6.7,
         humidity: 66,
         pressure: 1018,
@@ -72,7 +73,7 @@ class TestEntities {
   );
 
   static const testDailyWeatherDetailsModel = DailyWeatherDetailsModel(
-    date: 'Friday, February 14, 2025',
+    date: ConstDateTime(2025, 2, 14, 12, 0, 0),
     temperature: -6.7,
     humidity: 66,
     pressure: 1018,
